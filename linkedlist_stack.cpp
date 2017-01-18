@@ -56,19 +56,16 @@ void stack::show(){
     cout<<"\n["<<n<<"]"<<" NULL\n";
 }
 
-int main()
-{
+int main(){
     stack s;
     int choice;
-    while(1)
-    {
+    while(1){
     	system("cls");
         cout<<"STACK USING LINKED LIST\n";
         cout<<"1:PUSH\n2:POP\n3:DISPLAY STACK\n4:EXIT";
         cout<<"\nEnter your choice(1-4): ";
         cin>>choice;
-        switch(choice)
-        {
+        switch(choice){
             case 1:
                 s.push();
                 break;
