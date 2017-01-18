@@ -14,6 +14,7 @@ class stack{
         top=NULL;
     }
     void push();
+    void pop();
     void show();
 };
 
@@ -30,6 +31,17 @@ void stack::push(){
         ptr->next=top;
     top=ptr;
     cout<<"\nNew item is inserted to the stack.";
+}
+
+void stack::pop(){
+    struct node *temp;
+    if(top==NULL){
+        cout<<"\nThe stack is empty.";
+    }
+    temp=top;
+    top=top->next;
+    cout<<"\nPOP Operation\nPopped value is "<<temp->data;
+    delete temp;
 }
 
 void stack::show(){
@@ -52,8 +64,8 @@ int main()
     {
     	system("cls");
         cout<<"STACK USING LINKED LIST\n";
-        cout<<"1:PUSH\n2:DISPLAY STACK\n3:EXIT";
-        cout<<"\nEnter your choice(1-3): ";
+        cout<<"1:PUSH\n2:POP\n3:DISPLAY STACK\n4:EXIT";
+        cout<<"\nEnter your choice(1-4): ";
         cin>>choice;
         switch(choice)
         {
@@ -61,13 +73,16 @@ int main()
                 s.push();
                 break;
             case 2:
+            	s.pop();
+            	break;
+            case 3:
                 s.show();
                 break;
-            case 3:
+            case 4:
                 return 0;
                 break;
             default:
-                cout<<"\nPlease enter correct choice(1-3).";
+                cout<<"\nPlease enter correct choice(1-4).";
                 break;
         }
         getch();
